@@ -1,9 +1,9 @@
 // SEO meta tags and Open Graph helpers
 export const META_TAGS = {
-  title: 'Rocque Advisory | Professional Advisory Services',
-  description: 'Rocque Advisory offers expert business, financial, and market advisory services with a focus on integrity, innovation, and excellence.',
+  title: 'Rocque Advisory | Professional Services',
+  description: 'We are a development consulting firm that supports international organisations and their recipients deliver effective programmes',
   ogTitle: 'Rocque Advisory',
-  ogDescription: 'Guiding Your Success with Integrity, Innovation, and Excellence.',
+  ogDescription: 'Building Bridges for Effective Development Assistance',
   ogImage: '/assets/images/og-image.jpg',
   ogType: 'website',
   ogUrl: 'https://rocqueadvisory.com'
