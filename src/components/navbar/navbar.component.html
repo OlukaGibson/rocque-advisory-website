@@ -1,0 +1,41 @@
+<div class="glass-surface navbar">
+  <!-- Embedded SVG filter adapted from GlassSurface component -->
+  <svg class="glass-surface__filter" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter [attr.id]="filterId" color-interpolation-filters="sRGB" x="0%" y="0%" width="100%" height="100%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
+        <feBlend in="SourceGraphic" in2="blur" mode="screen" />
+      </filter>
+    </defs>
+  </svg>
+
+  <div class="glass-surface__content" [style.--filter-id]="'url(#' + filterId + ')'">
+    <div class="navbar-inner" (keydown)="onKeyDown($event)">
+      <div class="navbar-brand">{{ companyName }}</div>
+      <button 
+        class="navbar-toggle" 
+        (click)="toggleMenu()" 
+        [attr.aria-label]="menuToggleLabel()"
+        [attr.aria-expanded]="isMenuOpen()"
+        type="button">
+        <span class="material-icons">{{ isMenuOpen() ? 'close' : 'menu' }}</span>
+      </button>
+      <ul class="navbar-links" 
+          [class.open]="isMenuOpen()"
+          [attr.aria-hidden]="!isMenuOpen()"
+          role="menubar">
+        @for (navItem of navigationItems; track navItem.href) {
+          <li role="none">
+            <a 
+              [href]="navItem.href" 
+              (click)="closeMenu()" 
+              [attr.aria-label]="navItem.ariaLabel || navItem.label"
+              role="menuitem">
+              {{ navItem.label }}
+            </a>
+          </li>
+        }
+      </ul>
+    </div>
+  </div>
+</div>

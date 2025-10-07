@@ -1,0 +1,288 @@
+/* Shared Design System */
+
+/* Design Tokens */
+:root {
+  /* Colors */
+  --primary-color: #d21919;
+  --primary-color-hover: #a21212;
+  --text-color: #222;
+  --text-color-light: #666;
+  --background-primary: #fff;
+  --background-secondary: #fcf8f8;
+  --background-accent: #e3f2fd;
+  
+  /* Glass Effect */
+  --glass-background: rgba(255, 255, 255, 0.32);
+  --glass-mobile-background: rgba(255, 255, 255, 0.9);
+  --glass-border: rgba(255, 255, 255, 0.3);
+  
+  /* Shadows */
+  --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-elevated: 0 2px 16px 0 rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 8px 24px rgba(25, 118, 210, 0.10);
+  
+  /* Transitions */
+  --transition-smooth: 0.2s ease;
+  --transition-glass: 0.3s ease;
+  --transition-transform: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Borders */
+  --border-radius-small: 0.5rem;
+  --border-radius-medium: 1rem;
+  --border-radius-large: 1.25rem;
+  --border-radius-pill: 2rem;
+  
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 2.5rem;
+  --spacing-2xl: 4rem;
+  
+  /* Typography */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+}
+
+/* Shared Card Component Styles */
+.card {
+  background: var(--background-primary);
+  border-radius: var(--border-radius-large);
+  box-shadow: var(--shadow-light);
+  padding: var(--spacing-lg) var(--spacing-md);
+  transition: transform var(--transition-transform), box-shadow var(--transition-transform);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: var(--shadow-hover);
+}
+
+.card--interactive {
+  cursor: pointer;
+}
+
+.card--full-width {
+  width: 100%;
+  max-width: 340px;
+  margin: 0 auto;
+}
+
+.card--fixed-width {
+  width: 260px;
+}
+
+/* Card Grid Layouts */
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-lg);
+  justify-content: center;
+  margin-top: var(--spacing-lg);
+}
+
+.card-grid--auto-fit {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-lg);
+}
+
+/* Responsive Card Grids */
+@media (max-width: 900px) {
+  .card-grid {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+  
+  .card--fixed-width {
+    width: 100%;
+    max-width: 340px;
+    margin: 0 auto;
+  }
+}
+
+/* Section Layout Styles */
+.section {
+  padding: var(--spacing-2xl) var(--spacing-sm) var(--spacing-lg) var(--spacing-sm);
+  text-align: center;
+}
+
+.section--primary {
+  background: var(--background-primary);
+}
+
+.section--secondary {
+  background: var(--background-secondary);
+}
+
+.section--accent {
+  background: var(--background-accent);
+}
+
+.section__title {
+  font-size: 2rem;
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-lg);
+  color: var(--text-color);
+}
+
+/* Button Styles */
+.btn {
+  display: inline-block;
+  font-weight: var(--font-weight-semibold);
+  font-size: 1.1rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background var(--transition-smooth), box-shadow var(--transition-smooth), transform var(--transition-smooth);
+  border-radius: var(--border-radius-pill);
+  padding: 0.75rem var(--spacing-xl);
+}
+
+.btn--primary {
+  background: var(--primary-color);
+  color: var(--background-primary);
+  box-shadow: var(--shadow-light);
+}
+
+.btn--primary:hover {
+  background: var(--primary-color-hover);
+  box-shadow: 0 4px 16px rgba(25, 118, 210, 0.16);
+  transform: translateY(-1px);
+}
+
+.btn--primary:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Icon Styles */
+.icon {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Form Styles */
+.form {
+  max-width: 400px;
+  margin: 0 auto var(--spacing-lg) auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  background: var(--background-secondary);
+  padding: var(--spacing-lg) var(--spacing-md);
+  border-radius: var(--border-radius-large);
+  box-shadow: var(--shadow-light);
+}
+
+.form__label {
+  text-align: left;
+  font-weight: var(--font-weight-medium);
+  color: var(--text-color);
+}
+
+.form__input,
+.form__textarea {
+  border: 1px solid #bdbdbd;
+  border-radius: var(--border-radius-small);
+  padding: 0.75rem;
+  font-size: 1rem;
+  outline: none;
+  transition: border var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.form__input:focus,
+.form__textarea:focus {
+  border: 1.5px solid var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.1);
+}
+
+/* Accessibility Improvements */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Focus Management */
+*:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Animation Utilities */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-primary {
+  color: var(--primary-color);
+}
+
+.text-muted {
+  color: var(--text-color-light);
+}
+
+.font-bold {
+  font-weight: var(--font-weight-bold);
+}
+
+.font-semibold {
+  font-weight: var(--font-weight-semibold);
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.mb-sm {
+  margin-bottom: var(--spacing-sm);
+}
+
+.mb-md {
+  margin-bottom: var(--spacing-md);
+}
+
+.mb-lg {
+  margin-bottom: var(--spacing-lg);
+}
+
+.mt-lg {
+  margin-top: var(--spacing-lg);
+}

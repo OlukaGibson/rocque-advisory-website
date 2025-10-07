@@ -1,0 +1,49 @@
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>{{ companyName }}</h3>
+      <p>Building Bridges for Effective Development Assistance</p>
+    </div>
+    
+    <div class="footer-section contact-card">
+      <h4>Contact Information</h4>
+      <div class="contact-links">
+        <div class="contact-item address">
+          <span class="material-icons">location_on</span>
+          <span>{{ contactInfo.address }}</span>
+        </div>
+        <div class="contact-item">
+          <span class="material-icons">phone</span>
+          <span><strong>Tel:</strong> 
+            <a [href]="'tel:' + formatPhoneForTel(contactInfo.phone)" [attr.aria-label]="'Call us at ' + contactInfo.phone">
+              {{ contactInfo.phone }}
+            </a>
+          </span>
+        </div>
+        <div class="contact-item">
+          <span class="material-icons">email</span>
+          <span><strong>Email:</strong> 
+            <a [href]="'mailto:' + contactInfo.email" [attr.aria-label]="'Email us at ' + contactInfo.email">
+              {{ contactInfo.email }}
+            </a>
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#values">Values</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p>&copy; {{ currentYear }} {{ contactInfo.companyName }}. All rights reserved.</p>
+  </div>
+</footer>

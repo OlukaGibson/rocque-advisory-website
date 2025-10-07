@@ -1,0 +1,113 @@
+<section id="projects" class="projects-section">
+  <div class="section-header">
+    <h2>Our Impact</h2>
+    <p class="section-subtitle">Transforming development assistance across Africa through innovative solutions and strategic partnerships</p>
+  </div>
+  
+  <div class="projects-grid" role="grid" aria-label="Project showcase">
+    @for (project of projects(); track project.title) {
+      <article 
+        class="project-card"
+        role="gridcell"
+        tabindex="0"
+        (click)="onProjectClick(project)"
+        (keydown)="onProjectKeyDown($event, project)"
+        [attr.aria-label]="'View details for ' + project.title">
+        
+        <div class="project-image-wrapper">
+          <img 
+            [ngSrc]="project.image" 
+            width="600" 
+            height="400" 
+            [alt]="project.title + ' project showcase image'" 
+            loading="lazy" 
+            priority="false" />
+          <div class="project-overlay">
+            <span class="view-details">View Details</span>
+          </div>
+        </div>
+        
+        <div class="project-content">
+          <h3 class="project-title">{{ project.title }}</h3>
+          @if (project.description) {
+            <p class="project-description">{{ project.description }}</p>
+          }
+          <button class="learn-more-btn" [attr.aria-label]="'Learn more about ' + project.title">
+            Learn More →
+          </button>
+        </div>
+      </article>
+    }
+  </div>
+
+  <!-- Modal for detailed view -->
+  @if (selectedProject()) {
+    <div class="modal-overlay" 
+         (click)="closeModal()" 
+         (keydown)="onModalKeyDown($event)"
+         role="dialog" 
+         aria-modal="true"
+         [attr.aria-labelledby]="'modal-title-' + selectedProject()!.title">
+      
+      <div class="modal-content" (click)="$event.stopPropagation()">
+        <button class="modal-close" 
+                (click)="closeModal()" 
+                aria-label="Close modal">
+          ✕
+        </button>
+        
+        <div class="modal-image-wrapper">
+          <img 
+            [ngSrc]="selectedProject()!.image" 
+            width="800" 
+            height="500" 
+            [alt]="selectedProject()!.title" 
+            priority="true" />
+        </div>
+        
+        <div class="modal-body">
+          <h2 [id]="'modal-title-' + selectedProject()!.title" class="modal-title">
+            {{ selectedProject()!.title }}
+          </h2>
+          
+          @if (selectedProject()!.fullDescription) {
+            <p class="modal-description">{{ selectedProject()!.fullDescription }}</p>
+          }
+          
+          @if (selectedProject()!.impact && selectedProject()!.impact!.length > 0) {
+            <div class="impact-section">
+              @for (item of selectedProject()!.impact; track item.text) {
+                <div class="impact-item">
+                  <h4 class="impact-title">
+                    <span class="impact-icon">✓</span>
+                    {{ item.text }}
+                  </h4>
+                  @if (item.subItems && item.subItems.length > 0) {
+                    <ul class="impact-subitems">
+                      @for (subItem of item.subItems; track subItem) {
+                        <li>{{ subItem }}</li>
+                      }
+                    </ul>
+                  }
+                </div>
+              }
+            </div>
+          }
+          
+          @if (selectedProject()!.highlights && selectedProject()!.highlights!.length > 0) {
+            <div class="highlights-section">
+              <ul class="highlights-list">
+                @for (highlight of selectedProject()!.highlights; track highlight) {
+                  <li class="highlight-item">
+                    <span class="highlight-bullet">→</span>
+                    {{ highlight }}
+                  </li>
+                }
+              </ul>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  }
+</section>

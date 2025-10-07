@@ -1,0 +1,23 @@
+<section id="services" class="services-section">
+  <h2>Our Services</h2>
+  <p class="services-intro">We are a development consulting firm that supports international organisations and their recipients deliver effective programmes</p>
+  
+  <div class="services-list">
+    @for (service of services; track service.title) {
+      <div class="service-card">
+        <div class="image-container">
+          <img [src]="service.image" [alt]="service.title" class="service-image default-image">
+          <img [src]="service.hoverImage" [alt]="service.title" class="service-image hover-image">
+          <div class="overlay"></div>
+          <div class="content-overlay">
+            <div class="title-container">
+              <h3>{{ service.title }}</h3>
+              <span class="material-icons service-icon">{{ service.icon }}</span>
+            </div>
+            <p class="full-description">{{ service.fullDescription }}</p>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</section>
