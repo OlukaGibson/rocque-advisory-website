@@ -11,7 +11,10 @@
 
   <div class="glass-surface__content" [style.--filter-id]="'url(#' + filterId + ')'">
     <div class="navbar-inner" (keydown)="onKeyDown($event)">
-      <div class="navbar-brand">{{ companyName }}</div>
+      <a href="#home" class="navbar-brand" (click)="closeMenu()" aria-label="Go to Home section">
+        <img src="/assets/images/logo.svg" alt="Rocque Advisory Logo" class="navbar-logo">
+        <span class="navbar-brand-text">{{ companyName }}</span>
+      </a>
       <button 
         class="navbar-toggle" 
         (click)="toggleMenu()" 

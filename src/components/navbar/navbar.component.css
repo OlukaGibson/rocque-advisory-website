@@ -56,11 +56,10 @@
 }
 
 .navbar-brand {
-  font-weight: 800;
-  font-size: 1.5rem;
-  letter-spacing: 0.5px;
-  color: var(--text-color);
-  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
   transition: transform var(--transition-smooth);
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(8px);
@@ -71,6 +70,20 @@
 .navbar-brand:hover {
   transform: scale(1.05);
   background: rgba(255, 255, 255, 0.95);
+}
+
+.navbar-logo {
+  height: 2.5rem;
+  width: auto;
+  display: block;
+}
+
+.navbar-brand-text {
+  font-weight: 800;
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+  color: var(--text-color);
+  text-transform: uppercase;
 }
 
 .navbar-toggle {
@@ -137,10 +150,16 @@
     width: calc(100% - 2rem);
     padding: 0.75rem 1.5rem;
     top: 1rem;
+    overflow: visible;
+  }
+
+  .navbar-inner {
+    position: relative;
   }
 
   .navbar-toggle {
     display: block;
+    z-index: 1001;
   }
   
   .navbar-links {
@@ -158,6 +177,7 @@
     display: none;
     border-radius: var(--border-radius-curved);
     border: 1px solid rgba(255, 255, 255, 0.3);
+    z-index: 1000;
   }
   
   .navbar-links.open {
@@ -171,7 +191,16 @@
   }
 
   .navbar-brand {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
+    padding: 0.4rem 1rem;
+  }
+
+  .navbar-logo {
+    height: 2rem;
+  }
+
+  .navbar-brand-text {
+    font-size: 1.1rem;
   }
 }
 
@@ -181,7 +210,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  overflow: visible;
   transition: opacity 0.26s ease-out;
 }
 
@@ -205,6 +234,7 @@
   border-radius: inherit;
   position: relative;
   z-index: 1;
+  overflow: visible;
 }
 
 .glass-surface--svg {

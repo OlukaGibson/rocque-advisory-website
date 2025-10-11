@@ -153,7 +153,7 @@
 
 .value-card:hover .value-icon {
   background: linear-gradient(135deg, #d21919 0%, #a10d0d 100%);
-  transform: rotateY(360deg) scale(1.1);
+  transform: scale(1.1);
 }
 
 .value-card:hover .value-icon svg {

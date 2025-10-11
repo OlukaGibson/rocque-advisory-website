@@ -180,7 +180,6 @@ export const PROJECTS: readonly Project[] = [
 ] as const;
 
 export const NAVIGATION_ITEMS: readonly NavItem[] = [
-  { href: '#home', label: 'Home', ariaLabel: 'Go to Home section' },
   { href: '#services', label: 'Services', ariaLabel: 'Go to Services section' },
   { href: '#projects', label: 'Projects', ariaLabel: 'Go to Projects section' },
   { href: '#values', label: 'Values', ariaLabel: 'Go to Values section' },
