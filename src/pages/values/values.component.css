@@ -74,7 +74,7 @@
 /* Value Card */
 .value-card {
   background: white;
-  border-radius: 1.5rem;
+  border-radius: 0.375rem;
   padding: 2.5rem 2rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
