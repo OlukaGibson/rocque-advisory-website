@@ -79,19 +79,10 @@ export const PROJECTS: readonly Project[] = [
     image: '/assets/images/projects/Building Bridges, Unlocking Potential.jpeg',
     description: 'Integration of donor-funded programmes into national computerised financial management systems (IFMIS) in two African countries.',
     fullDescription: 'Integration of donor-funded programmes into national computerised financial management systems (IFMIS) in two African countries has delivered significant benefits:',
-    impact: [
-      {
-        text: 'Stronger local ownership',
-        subItems: ['Sub-national levels now have greater responsibility and control over programme implementation.']
-      },
-      {
-        text: 'Higher fund absorption',
-        subItems: ['Resources reach implementation sites more quickly, enabling more effective use of funds.']
-      },
-      {
-        text: 'Smarter reporting and targeting',
-        subItems: ['Streamlined reporting through the national system makes it possible to direct resources to the areas of greatest need, including during disease outbreaks.']
-      }
+    highlights: [
+      'Stronger local ownership: Sub-national levels now have greater responsibility and control over programme implementation.',
+      'Higher fund absorption: Resources reach implementation sites more quickly, enabling more effective use of funds.',
+      'Smarter reporting and targeting: Streamlined reporting through the national system makes it possible to direct resources to the areas of greatest need, including during disease outbreaks.'
     ]
   },
   {
@@ -105,29 +96,16 @@ export const PROJECTS: readonly Project[] = [
     image: '/assets/images/projects/Rocque Team Delivering Training for Local Council Officers.jpeg',
     description: 'Strengthened accountability and financial management through targeted training across 20+ countries.',
     fullDescription: 'Rocque Advisory strengthened accountability and financial management through targeted training:',
-    impact: [
-      {
-        text: 'Audit personnel in 20+ countries',
-        subItems: [
-          'Improved audit quality and timeliness, increasing donor confidence',
-          'Enabled audits to address programmatic as well as financial aspects'
-        ]
-      },
-      {
-        text: 'Accountants in 4 countries',
-        subItems: [
-          'Enhanced skills in planning and budgeting for immunisation',
-          'Strengthened accountability for domestic and donor funds',
-          'Promoted timely, transparent financial management at all levels'
-        ]
-      }
+    highlights :[
+      '•	Audit personnel in 20+ countries – improved audit quality and timeliness, increasing donor confidence and enabling audits to address programmatic as well as financial aspects',
+      '•	Accountants in 4 countries – enhanced skills in planning and budgeting for immunisation, strengthened accountability for domestic and donor funds, and promoted timely, transparent financial management at all levels.'
     ]
   },
   {
     title: 'Driving Impact Across Eight African Countries',
     image: '/assets/images/projects/Rocque Team Leading a Mobile Payments Platform Workshop in Lilongwe_Malawi.jpeg',
     description: 'Our Upscaling Programme strengthens government systems and accelerates the flow of donor funds.',
-    fullDescription: 'Our Upscaling Programme strengthens government systems and accelerates the flow of donor funds by:',
+    fullDescription: '',
     highlights: [
       'Strengthening financial management — helping government teams address system gaps and unlock timely donor disbursements.',
       'Building smarter budgets — developing clear, effective budgets within grant applications and workplans.',
@@ -139,7 +117,7 @@ export const PROJECTS: readonly Project[] = [
     title: 'Technical Support to the Ghana Ministry of Health and Ghana Health Service',
     image: '/assets/images/projects/Rocque Team Delivering Training for Local Council Officers.jpeg',
     description: 'Comprehensive financial management support ensuring grant conditions fulfillment and timely donor disbursements.',
-    fullDescription: 'Rocque Advisory provided comprehensive technical support to strengthen financial management systems and processes:',
+    fullDescription: '',
     highlights: [
       'Financial management-related grant conditions have now been fulfilled.',
       'Budgets and work plans submitted to donor and disbursements to country resumed.',
@@ -154,28 +132,15 @@ export const PROJECTS: readonly Project[] = [
     title: 'Technical Support to the Tanzania Vaccine & Immunisation Development Programme',
     image: '/assets/images/projects/Building Bridges, Unlocking Potential.jpeg',
     description: 'Built capacity and returned funding to government systems with computerised financial management across 31 regions.',
-    fullDescription: 'Rocque Advisory strengthened Tanzania\'s vaccine and immunisation programme through comprehensive system improvements:',
-    impact: [
-      {
-        text: 'Capacity was built and funding returned to government systems',
-        subItems: [
-          'A computerised financial system EPICOR set leading to timely reporting with compliance to donor requirements.'
-        ]
-      },
-      {
-        text: 'Donor funds and budgets configured in the Ministry of Local Government\'s system',
-        subItems: [
-          'Leading to transfers to 31 regions, 194 districts and more than 3000 facilities with reporting.'
-        ]
-      },
-      {
-        text: 'The finance team capacitated through monitoring and mentorship',
-        subItems: [
-          'Performing regular expenditure reviews at sub-national levels.',
-          'Supporting budgeting – improved quality and turnaround of budgets to donor.'
-        ]
-      }
-    ]
+    fullDescription: '',
+    highlights: [
+      'Capacity was built and funding returned to government systems',
+      'A computerised financial system EPICOR set leading to timely reporting with compliance to donor requirements.',
+      'Donor funds and budgets configured in the Ministry of Local Government’s system leading to transfers to 31 regions, 194 districts and more than 3000 facilities with reporting.',
+      'The finance team capacitated through monitoring and mentorship.',
+      'Performing regular expenditure reviews at sub-national levels.',
+      'Supporting budgeting – improved quality and turnaround of budgets to donor.'
+    ],
   }
 ] as const;
 
